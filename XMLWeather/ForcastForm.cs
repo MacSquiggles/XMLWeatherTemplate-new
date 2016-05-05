@@ -96,9 +96,15 @@ namespace XMLWeather
                                             weatherImage.Image = Properties.Resources.fog;
                                         }
                                     }
-                                    if (greatGrandChild.Name == "humidity")
+                                    if (greatGrandChild.Name == "precipitation")
                                     {
-                                        rain = greatGrandChild.Attributes["value"].Value;
+                                        try {
+                                            rain = greatGrandChild.Attributes["value"].Value;
+                                        }
+                                        catch
+                                        {
+                                            rain = "0";
+                                        }
                                     }
                                     if (greatGrandChild.Name == "pressure")
                                     {
@@ -151,11 +157,11 @@ namespace XMLWeather
             //Displays weather infor according to the object
             forecastMaxLabel.Text = "Max " + d.maxTemp + "°C";
             forecastMinLabel.Text = "Min " + d.minTemp + "°C";
-            cloudsLabel.Text = d.clouds;
-            rainPerLabel.Text = d.rainPer + "%" + " humidity";
+            cloudsLabel.Text = d.clouds.Remove(1).ToUpper() + d.clouds.Substring(1);
+            rainPerLabel.Text = d.rainPer + "%" + " chance of rain";
             pressureLabel.Text = "Pressure of " + d.pressure + "hKpa";
             windLabel.Text = d.windDir + " wind at " + d.wind + "km/h";
-            conditionsLabel.Text = d.conditions;
+            conditionsLabel.Text = d.conditions.Remove(1).ToUpper() + d.conditions.Substring(1);
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -174,7 +180,5 @@ namespace XMLWeather
             f.Controls.Add(mm);
             mm.BringToFront();
         }
-
-
     }
 }

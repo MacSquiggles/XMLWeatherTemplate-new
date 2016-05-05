@@ -51,10 +51,6 @@ namespace XMLWeather
                 {
                     currentTempLabel.Text = "It is " + child.Attributes["value"].Value + "°C";
                 }
-                if (child.Name == "clouds")
-                {
-                    cloudLabel.Text = child.Attributes["name"].Value;
-                }
                 if (child.Name == "weather")
                 {
                     //based on the number value, an image is displayed according to the conditions
@@ -90,6 +86,7 @@ namespace XMLWeather
                     {
                         currentWeatherImage.Image = Properties.Resources.fog;
                     }
+                    conditionsLabel.Text = child.Attributes["value"].Value.Remove(1).ToUpper() + child.Attributes["value"].Value.Substring(1);
                 }
                 if (child.Name == "wind")
                 {
@@ -102,6 +99,7 @@ namespace XMLWeather
                         if (grandChild.Name == "speed")
                         {
                             currentWindLabel.Text = Convert.ToString(Convert.ToDouble(grandChild.Attributes["value"].Value) * 3.6) + "km/h wind";
+                            cloudLabel.Text = grandChild.Attributes["name"].Value.Remove(1).ToUpper() + grandChild.Attributes["name"].Value.Substring(1);
                         }
                     }
                 }

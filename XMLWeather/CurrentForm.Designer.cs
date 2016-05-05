@@ -38,6 +38,7 @@
             this.mainMenuButton = new System.Windows.Forms.Label();
             this.cityLabel = new System.Windows.Forms.Label();
             this.currentWeatherImage = new System.Windows.Forms.PictureBox();
+            this.conditionsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.currentWeatherImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             // 
             this.currentWindLabel.BackColor = System.Drawing.Color.Transparent;
             this.currentWindLabel.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentWindLabel.Location = new System.Drawing.Point(9, 625);
+            this.currentWindLabel.Location = new System.Drawing.Point(21, 629);
             this.currentWindLabel.Name = "currentWindLabel";
             this.currentWindLabel.Size = new System.Drawing.Size(458, 52);
             this.currentWindLabel.TabIndex = 2;
@@ -76,7 +77,7 @@
             // 
             this.currentTempLabel.BackColor = System.Drawing.Color.Transparent;
             this.currentTempLabel.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentTempLabel.Location = new System.Drawing.Point(9, 449);
+            this.currentTempLabel.Location = new System.Drawing.Point(21, 461);
             this.currentTempLabel.Name = "currentTempLabel";
             this.currentTempLabel.Size = new System.Drawing.Size(458, 52);
             this.currentTempLabel.TabIndex = 3;
@@ -85,7 +86,7 @@
             // 
             this.windDirectLabel.BackColor = System.Drawing.Color.Transparent;
             this.windDirectLabel.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.windDirectLabel.Location = new System.Drawing.Point(9, 713);
+            this.windDirectLabel.Location = new System.Drawing.Point(21, 713);
             this.windDirectLabel.Name = "windDirectLabel";
             this.windDirectLabel.Size = new System.Drawing.Size(458, 52);
             this.windDirectLabel.TabIndex = 4;
@@ -94,7 +95,7 @@
             // 
             this.cloudLabel.BackColor = System.Drawing.Color.Transparent;
             this.cloudLabel.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cloudLabel.Location = new System.Drawing.Point(9, 537);
+            this.cloudLabel.Location = new System.Drawing.Point(21, 545);
             this.cloudLabel.Name = "cloudLabel";
             this.cloudLabel.Size = new System.Drawing.Size(458, 52);
             this.cloudLabel.TabIndex = 6;
@@ -125,18 +126,28 @@
             // 
             this.currentWeatherImage.BackColor = System.Drawing.Color.Transparent;
             this.currentWeatherImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.currentWeatherImage.Location = new System.Drawing.Point(114, 219);
+            this.currentWeatherImage.Location = new System.Drawing.Point(121, 141);
             this.currentWeatherImage.Name = "currentWeatherImage";
             this.currentWeatherImage.Size = new System.Drawing.Size(246, 208);
             this.currentWeatherImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.currentWeatherImage.TabIndex = 22;
             this.currentWeatherImage.TabStop = false;
             // 
+            // conditionsLabel
+            // 
+            this.conditionsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.conditionsLabel.Font = new System.Drawing.Font("Pristina", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conditionsLabel.Location = new System.Drawing.Point(21, 377);
+            this.conditionsLabel.Name = "conditionsLabel";
+            this.conditionsLabel.Size = new System.Drawing.Size(458, 52);
+            this.conditionsLabel.TabIndex = 23;
+            // 
             // CurrentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.Controls.Add(this.conditionsLabel);
             this.Controls.Add(this.currentWeatherImage);
             this.Controls.Add(this.cityLabel);
             this.Controls.Add(this.mainMenuButton);
@@ -165,5 +176,6 @@
         private System.Windows.Forms.Label mainMenuButton;
         private System.Windows.Forms.Label cityLabel;
         private System.Windows.Forms.PictureBox currentWeatherImage;
+        private System.Windows.Forms.Label conditionsLabel;
     }
 }
